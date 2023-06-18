@@ -13,6 +13,7 @@ import { FaGithub, FaLinkedin, FaBehanceSquare } from "react-icons/fa"
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
 import { routes } from "../routes"
+import Logo from "./custom-icons/logo"
 
 export default function Header(){
 
@@ -64,7 +65,9 @@ export default function Header(){
       <div>
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Image src={logo} alt="" width={90} priority />
+          <div className="w-16">
+            { darkTheme ? (<Image src={logo} alt="" width={90} priority />) : (<Logo /> )  }
+          </div>
           </div>
           <div className="flex lg:hidden">
               <button
@@ -153,20 +156,20 @@ export default function Header(){
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-600 hover:text-purple-700 overflow-hidden"
                   >
-                    <FaGithub fontSize={22} />
+                    <div className="flex  items-center"> <FaGithub fontSize={22} /> <span className="ml-2">Github</span></div>
                     
                   </a>
                   <a
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-600 hover:text-indigo-700 overflow-hidden"
                   >
-                    <FaLinkedin fontSize={22}/>
+                    <div className="flex items-center"> <FaLinkedin fontSize={22}/> <span className="ml-2">LinkedIn</span></div>
                   </a>
                   <a
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-600 hover:text-blue-600 overflow-hidden"
                   >
-                    <FaBehanceSquare fontSize={22} />
+                    <div className="flex  items-center"> <FaBehanceSquare fontSize={22} /> <span className="ml-2">Behance</span></div>
                   </a>
                 </div>
               </div>
