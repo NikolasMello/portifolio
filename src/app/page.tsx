@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main>
-        <div className="grid grid-cols-3 gap-2 max-w-7xl mx-auto px-4 md:px-10 items-center">
+        <div className="grid grid-cols-3 gap-2 max-w-7xl mx-auto px-4 md:px-10 items-center pt-9">
           <div className="order-last md:order-none col-span-3 pt-8 md:col-span-1 md:p-2 md:pt-0">
             <h2 className="primary-text">
               Nikolas Mello <br />

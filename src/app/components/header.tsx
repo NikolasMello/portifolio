@@ -29,12 +29,11 @@ export default function Header(){
     
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [darkTheme, setDarkTheme] = useState(false)
+    const [navBar, setNavBar] = useState(false)
 
     const menuItens = routes;
 
     const pathName = usePathname()
-
-    console.log(pathName)
 
     const setLight:()=> void = () => {
       setDarkTheme(false)
@@ -60,10 +59,21 @@ export default function Header(){
       const validate = pathName === link
       return validate;
     }
-  
+
+    const changeNavBar: ()=> void = () => {
+      if(window.scrollY >= 80){
+        setNavBar(true);
+      } else {
+        setNavBar(false);
+      }
+    }
+
+    window.addEventListener('scroll', changeNavBar);
+    
     return (
-      <div>
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
+      <div className="w-full fixed backdrop-blur-xl z-[9]">
+        <nav className={navBar ? `mx-auto flex max-w-7xl items-center justify-between p-2 mt-2 rounded-lg navbar-shadow lg:px-8 transition-all duration-500`
+                        : `mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8 transition-all duration-500`}>
           <div className="flex lg:flex-1">
           <div className="w-16">
             { darkTheme ? (<Image src={logo} alt="" width={90} priority />) : (<Logo /> )  }
@@ -122,12 +132,14 @@ export default function Header(){
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-10" />
+          <div className="fixed inset-0 z-[101]" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto menu-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between -mx-3">
               <Link href="/">
                 <span className="sr-only">Nikolas Mello Developer</span>
-                <Image src={logo} alt="" width={90} priority />
+                <div className="w-16">
+                { darkTheme ? (<Image src={logo} alt="" width={90} priority />) : (<Logo /> )  }
+                </div>
               </Link>
               <button
                 type="button"

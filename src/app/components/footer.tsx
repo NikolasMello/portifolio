@@ -9,10 +9,10 @@ import NextJSLogo from "./custom-icons/next-js-logo";
 
 export default function Footer(){
     return (
-        <div className="grid grid-cols-3 :gap-6 max-w-7xl mx-auto px-4 md:px-10 md:mt-40">
+        <div className="grid grid-cols-3 :gap-6 max-w-7xl mx-auto px-4 md:px-10 md:mt-20">
             <div className="col-span-3 md:col-span-1">
                 <div className="p-4 md:m-2">
-                    <div className="text-base w-24">
+                    <div className="text-base w-16 -my-1">
                         <LogoCustom />
                     </div>   
                     <p>
@@ -38,7 +38,7 @@ export default function Footer(){
                     </div>   
                 </div>
             </div>
-            <div className="col-span-3 border-t border-slate-600 border-opacity-50 dark:border-slate-400 dark:border-opacity-50 text-center py-4">
+            <div className="col-span-3 border-top text-center py-4">
                 <p>Nikolas Mello - 2023</p>
             </div>
     </div>  
