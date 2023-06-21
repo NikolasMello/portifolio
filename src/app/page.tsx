@@ -5,7 +5,6 @@ import Image from "next/image"
 import Tecnologias from "./components/tecnologias"
 import SobreSection from "./components/sobre"
 import Projetos from "./components/projetos"
-import Footer from "./components/footer"
 
 export default function Home() {
 
@@ -28,7 +27,6 @@ export default function Home() {
       <Tecnologias />
       <SobreSection />
       <Projetos />
-      <Footer />
     </main>
   )
 }

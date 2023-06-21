@@ -1,6 +1,16 @@
+import { Metadata } from "next"
+import SobreContent from "./content"
+
+export const metadata: Metadata ={
+    title:"Sobre",
+    description:"Sobre"
+}
+
 export default function Sobre(){
 
     return (
-        <p>Página Sobre</p>
+        <div>
+            <SobreContent />
+        </div>
     )
 }

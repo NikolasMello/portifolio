@@ -48,7 +48,7 @@
   }
 
   .navbar-shadow{
-    @apply  shadow-md shadow-indigo-600/10 dark:shadow-indigo-950/20 bg-white/70 dark:bg-slate-950/95;
+    @apply  shadow-md shadow-indigo-600/10 dark:shadow-indigo-950/20 bg-white/70 dark:bg-slate-900/95;
   }
 
   .icon-hover{
@@ -62,6 +62,12 @@
   .primary-text {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-blue-600
            dark:from-purple-400 dark:to-blue-400 ;
+  }
+
+  .primary-button {
+    @apply transition bg-gradient-to-r from-purple-700 to-blue-600 hover:from-purple-800 hover:shadow-violet-500/60
+     hover:to-blue-700 dark:bg-gradient-to-r dark:from-purple-600 dark:to-blue-600 hover:shadow-lg dark:hover:shadow-violet-600/30
+     dark:hover:from-purple-500 dark:hover:to-blue-500;
   }
 
   .bg-gradient-top{
@@ -90,6 +96,11 @@
 
   .border-top{
     @apply border-t border-slate-600 border-opacity-50 dark:border-slate-400 dark:border-opacity-50;
+  }
+
+  .form-input{
+    @apply mt-1 block w-full text-base rounded-md border-gray-300 dark:border-gray-600 bg-gray-50
+    dark:bg-gray-900 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:focus:ring-opacity-50 dark:focus:border-indigo-900 dark:focus:ring-indigo-900 
   }
 
   body {

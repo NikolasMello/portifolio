@@ -25,6 +25,7 @@ export default function Header(){
       } else {
         setLight();
       }
+      window.addEventListener('scroll', changeNavBar);
     }, [])
     
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -68,7 +69,7 @@ export default function Header(){
       }
     }
 
-    window.addEventListener('scroll', changeNavBar);
+  
     
     return (
       <div className="w-full fixed backdrop-blur-xl z-[9]">
