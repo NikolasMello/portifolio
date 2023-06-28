@@ -134,7 +134,7 @@ export default function Header(){
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-[101]" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto menu-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <Dialog.Panel className="fixed inset-y-0 right-0 w-full overflow-y-auto menu-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 z-[102]">
             <div className="flex items-center justify-between -mx-3">
               <Link href="/">
                 <span className="sr-only">Nikolas Mello Developer</span>
@@ -158,6 +158,7 @@ export default function Header(){
                   <Link
                     key={name}
                     href={link}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={verifyActiveItem(link) ? "-mx-3 block rounded-lg px-3 py-2 text-base text-link-active overflow-hidden" : "-mx-3 block rounded-lg px-3 py-2 text-base text-link overflow-hidden"}
                   >
                   {name}
