@@ -1,5 +1,4 @@
 "use client"
-import MainImage from "../assets/images/imagem capa.svg"
 import MainImage2 from "../assets/images/imagem capa2.svg"
 import Image from "next/image"
 import Tecnologias from "./components/tecnologias"
@@ -17,7 +16,7 @@ export default function Home() {
               Web Developer
             </h2>
             <p className="p-2"> 
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto nihil hic numquam earum et, nam, magnam explicabo nulla.
+              Sou um desenvolvedor com foco no Front-end com React e Angular. Sempre bucando as melhores soluções de design e interatividade para o usuário.
             </p>
           </div>
           <div className="col-span-3 md:col-span-2 ">

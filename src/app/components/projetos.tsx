@@ -1,3 +1,8 @@
+import Link from "next/link"
+import { dataProjetos } from "../projetos/data-projetos"
+import Image from "next/image"
+
+
 export default function Projetos() {
 
     return (
@@ -6,51 +11,27 @@ export default function Projetos() {
                 <div className="col-span-3 mb-8 text-center ">
                     <h3 className="secondary-text">Projetos</h3>
                 </div>
-                <div className="col-span-3 md:col-span-1">
-                    <div className="flex justify-center -mb-[9px]">
-                        <div className="w-3/4">
-                            <div className="h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent  w-full"></div>
-                        </div>
-                    </div>
-                    <div className="px-4 py-2 mx-2 my-2 rounded-lg card-shadow bg-card">
-                        <h5 className="px-1 primary-text">Project Title</h5>
-                        <div className="full-w h-32 my-2 bg-blue-200 rounded-md text-center"> <p className="pt-12">imagem </p></div>
-                        <p className="px-1 py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea eveniet unde dolorum quas? At, culpa.</p>
-                        <div className="flex border-top py-2 px-1 text-base">
-                            icons
-                        </div>
-                    </div>     
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                    <div className="flex justify-center -mb-[9px]">
-                        <div className="w-3/4">
-                            <div className="h-[1px] bg-gradient-to-r from-transparent via-indigo-400 to-transparent  w-full"></div>
-                        </div>
-                    </div>
-                <div className="px-4 py-2 mx-2 my-2 rounded-lg card-shadow bg-card">
-                        <h5 className="px-1 primary-text">Project Title</h5>
-                        <div className="full-w h-32 my-2 bg-blue-200 rounded-md text-center"> <p className="pt-12">imagem </p></div>
-                        <p className="px-1 py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea eveniet unde dolorum quas? At, culpa.</p>
-                        <div className="flex border-top py-2 px-1 text-base">
-                            icons
-                        </div>
-                    </div>  
-                </div>
-                <div className="col-span-3 md:col-span-1 ">
+                {dataProjetos.map((projeto) => (
+                <div className="col-span-3 md:col-span-1" key={projeto.id}>
+                    <Link href={projeto.link}>
                     <div className="flex justify-center -mb-[9px]">
                         <div className="w-3/4">
                             <div className="h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent  w-full"></div>
                         </div>
                     </div>
-                <div className="px-4 py-2 mx-2 my-2 rounded-lg card-shadow bg-card">
-                        <h5 className="px-1 primary-text">Project Title</h5>
-                        <div className="full-w h-32 my-2 bg-blue-200 rounded-md text-center"> <p className="pt-12">imagem </p></div>
-                        <p className="px-1 py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea eveniet unde dolorum quas? At, culpa.</p>
-                        <div className="flex border-top py-2 px-1 text-base">
-                            icons
+                    <div className="px-4 py-2 mx-2 my-2 rounded-lg card-shadow bg-card transition-all duration-500 hover:bg-slate-200 dark:hover:bg-slate-800">
+                        <h5 className="px-1 primary-text">{projeto.title}</h5>
+                        <div className="my-2 rounded-md overflow-hidden theme-border">
+                            <Image src={projeto.thumb} alt="" width={345} />
                         </div>
-                    </div>  
+                        <p className="px-1 py-3">{projeto.prev}</p>
+                        <div className="flex border-top py-3 px-1 text-base gap-3 items-center">
+                            {projeto.iconsMini}
+                        </div>
+                    </div>
+                    </Link>     
                 </div>
+                ))}
             </div> 
         </div>
     )

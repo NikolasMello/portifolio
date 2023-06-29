@@ -30,11 +30,11 @@ export default function Footer(){
                 <div className="p-4 md:m-2">
                     <p className="py-1">Esse portiólio foi desenvolvido com: </p>
                      <div className="flex text-pattern-color py-1 gap-3 w-full items-center">
-                        <div  className="w-90"><NextJSLogo /></div>
+                        <NextJSLogo className="w-90" />
                         <FaReact className="w-8 h-8 "/>
                         <FaNodeJs className="w-8 h-8" />
-                        <div  className="w-8 h-8"><TypescriptIcon /></div>
-                        <div  className="w-8 h-8"><TailwindCssIcon /></div>
+                        <TypescriptIcon className="w-8 h-8" />
+                        <TailwindCssIcon className="w-8 h-8" />
                     </div>   
                 </div>
             </div>

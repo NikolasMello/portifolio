@@ -14,53 +14,11 @@ export type Quiz = {
     answers: Answer[]
 }
 
-export type CheckedQuestion = {
-    id:number,
-    checked: boolean
+export type Result = {
+    marks: number,
+    score: number,
+    situation: string;
 }
-
-export const checkQuestions:CheckedQuestion[] = [
-    {
-        id:1,
-        checked: false
-    },
-    {
-        id:2,
-        checked: false
-    },
-    {
-        id:3,
-        checked: false
-    },
-    {
-        id:4,
-        checked: false
-    },
-    {
-        id:5,
-        checked: false
-    },
-    {
-        id:6,
-        checked: false
-    },
-    {
-        id:7,
-        checked: false
-    },
-    {
-        id:8,
-        checked: false
-    },
-    {
-        id:9,
-        checked: false
-    },
-    {
-        id:10,
-        checked: false
-    },
-]
 
 export const questions:Quiz[] = [
     {
@@ -152,7 +110,7 @@ export const questions:Quiz[] = [
             },
             {
                 id:302,
-                label:"a",
+                label:"b",
                 answer:"Class",
                 selected:false,
                 correctAnswer:true
