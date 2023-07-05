@@ -1,5 +1,5 @@
 "use client"
-import { useState, Fragment } from "react"
+import { useState, Fragment, useRef } from "react"
 import { Quiz, Answer, questions } from "./questions"
 import { FaCalculator, FaCheck, FaExclamationCircle, FaFile, FaPen, FaReact, FaRegThumbsDown, FaRegThumbsUp } from "react-icons/fa";
 import { Dialog, Transition } from "@headlessui/react";
@@ -12,11 +12,11 @@ export default function ReactQuizContent(){
     const [resultModal, setResultModal] = useState<boolean>(false)
     const [alertModal, setAlertModal] = useState<boolean>(false)
     const [result, setResult] = useState<Result>(new Result())
+    const myModalTitle = useRef(null)
 
     const nextQuestion:()=> void = () => {
-        if(currentQuestion <= 8){
-            setCurrentQuestion(currentQuestion + 1)
-        } else if( allAnswersAreChecked() ){
+        if( allAnswersAreChecked() ){
+            
             let calculatedResult:Result = new Result();
             calculatedResult.verifyCorretAnswers(quiz);
             calculatedResult.calculateScore(calculatedResult.getMarks, quiz.length)
@@ -24,6 +24,8 @@ export default function ReactQuizContent(){
             setResult(calculatedResult)
             console.log(result)
             setResultModal(true)
+        } else if(currentQuestion <= 8){
+            setCurrentQuestion(currentQuestion + 1)
         } else {
             setAlertModal(true)
         }
@@ -158,7 +160,7 @@ export default function ReactQuizContent(){
                 </div>
             </div>
             <Transition show={resultModal} >
-            <Dialog onClose={() => setResultModal(false)}>
+            <Dialog onClose={() => setResultModal(false)} className="relative z-[10]" initialFocus={myModalTitle}>
                 <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -168,7 +170,7 @@ export default function ReactQuizContent(){
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
                 >
-                <div className="fixed inset-0 bg-black/90 z-[10]" />
+                <div className="fixed inset-0 bg-black/90" aria-hidden="true" />
                 </Transition.Child>
                 <Transition.Child
                 as={Fragment}
@@ -179,26 +181,26 @@ export default function ReactQuizContent(){
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
                 >
-                    <div className="fixed inset-0 z-[11]">
-                    <div className="flex h-[58rem] justify-center p-4">
-                    <Dialog.Panel className="w-full max-w-5xl rounded text-base p-4 bg-card">
-                            <h4 className="text-sky-500 text-center">Result</h4>
+                    <div className="fixed inset-0 overflow-y-auto">
+                    <div className="flex min-h-full items-center justify-center p-4">
+                    <Dialog.Panel className="max-w-5xl rounded text-base p-4 bg-card">
+                            <h4 className="text-sky-500 text-center" ref={myModalTitle}>Result</h4>
                                     <div className="grid grid-cols-3 gap-2 mt-4">
-                                        <div className="col-span-1 text-center">
+                                        <div className="col-span-3 md:col-span-1  text-center">
                                             <div className="ring-4 rounded-lg w-44 h-40 mx-auto py-2 mb-4">
                                                 <h6 className="text-sky-500">Marks</h6>
                                                 <FaPen className={result.getMarks >= 7 ? "mx-auto h-8 w-8 m-4 text-emerald-500" : "mx-auto h-8 w-8 m-4 text-rose-500"} />
                                                 <span className={result.getMarks >= 7 ? "my-2 font-bold text-emerald-500" : "my-2 font-bold text-rose-500"}>{result.getMarks} / {quiz.length}</span>
                                             </div>
                                         </div>
-                                        <div className="col-span-1 text-center">
+                                        <div className="col-span-3 md:col-span-1 text-center">
                                         <div className="ring-4 rounded-lg w-44 h-40 mx-auto py-2 mb-4">
                                                 <h6 className="text-sky-500">Score</h6>
                                                 <FaCalculator className={result.getScore >= 7 ? "mx-auto h-8 w-8 m-4 text-emerald-500" : "mx-auto h-8 w-8 m-4 text-rose-500"} />
                                                 <span className={result.getScore >= 7 ?  "my-2 font-black text-emerald-500" : "my-2 font-black text-rose-500"}>{result.getScore}</span>
                                             </div>
                                         </div>
-                                        <div className="col-span-1 text-center">
+                                        <div className="col-span-3 md:col-span-1  text-center">
                                             <div className="ring-4 rounded-lg w-44 h-40 mx-auto py-2 mb-4">
                                                 <h6 className="text-sky-500">Situation</h6>
                                                 {   
@@ -209,7 +211,7 @@ export default function ReactQuizContent(){
                                                 <span className={ result.getSituation === "Approved" ? "my-2 font-bold text-emerald-500" : "my-2 font-bold text-rose-500" }>{result.getSituation}</span>
                                             </div>
                                         </div>
-                                            <div className="col-span-3 max-h-[32rem] overflow-y-auto my-4">
+                                            <div className="col-span-3 my-4">
                                                 <div className="min-h-full">
                                                     {quiz.map((result)=> (
                                                         <div key={result.id} className="p-4">

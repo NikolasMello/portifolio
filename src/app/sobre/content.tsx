@@ -1,5 +1,5 @@
 "use client"
-import { FaAngular, FaJava } from "react-icons/fa"
+import { FaAngular, FaCheck, FaJava } from "react-icons/fa"
 import TypescriptIcon from "../components/custom-icons/typescript-icon"
 import Image from "next/image"
 import Nikolas from "../../assets/images/nikolas.jpg"
@@ -10,15 +10,23 @@ export default function SobreContent(){
     return (
         <div className="grid grid-cols-8 gap-2 max-w-7xl items-center mx-auto px-4 md:px-10 pt-20 pb-3">
             <div className="col-span-8 md:col-span-8 rounded-lg">
-                <div className="px-4 mx-2 my-2">
+                <div className="px-4 m-2">
                     <div className="grid grid-cols-3 gap-2 items-center">
-                        <div className="col-span-3 md:col-span-2 order-last md:order-none">
-                        <h3 className="primary-text">{myData.name}</h3>
-                        <p className="mb-4">{myData.about}</p>
-                        <h3 className="primary-text">Experiência Profissional</h3>
-                        <p className="mb-4">{myData.experience}</p>
+                        <div className="col-span-3 md:col-span-2 order-last md:order-none pe-8">
+                            <h3 className="primary-text">{myData.name}</h3>
+                            {myData.about.map((about)=> (
+                                <p className="mb-1" key={about}>
+                                    {about}
+                                </p>
+                            ))}  
+                            <h3 className="primary-text">Experiência Profissional</h3>
+                            {myData.experience.map((experience)=> (
+                                <p key={experience} className="mb-1">
+                                    {experience} 
+                                </p>
+                            ))}
                         </div>
-                        <div className="col-span-3 md:col-span-1 md:p-4">
+                        <div className="col-span-3 md:col-span-1 md:p-8">
                         <div className="w-full rounded-lg overflow-hidden">
                             <Image src={Nikolas} alt="" width={445} />
                         </div>
@@ -37,14 +45,16 @@ export default function SobreContent(){
                                     {course.title}
                                 </h6>                                
                                     {course.subItens.map((subItem)=> (
-                                        <div className="mt-4" key={subItem.id}>
+                                        <div className="mt-4 mb-6" key={subItem.id}>
                                             {subItem.icon}
                                             {subItem.content.map((textItem)=> (
-                                                <p className="mb-2" key={textItem.id}>
-                                                    - {textItem.description}
-                                                </p>
-                                            ))}
-                                            
+                                                <div className="flex" key={textItem.id}>
+                                                    <div className="me-1">- </div>
+                                                    <p className="mb-2" >
+                                                        {textItem.description}
+                                                    </p>
+                                                </div>
+                                            ))}    
                                         </div>
                                     ))}
                             </div>
@@ -58,7 +68,18 @@ export default function SobreContent(){
                 <div className="grid grid-cols-3 gap-4 items-center text-base">
                     <div className="col-span-3 md:col-span-1 bg-card rounded-lg p-4">
                         {myData.languages.map((language)=> (
-                        <p className="mb-2" key={language.title}><span className="font-semibold">{language.title} </span> - {language.level}</p>
+                            <div key={language.title} className="mb-4">
+                        <h6 className="secondary-text" >{language.title}</h6>
+                            <p className="mb-2">{language.level}</p>
+                            {language.schools.map((school) => (
+                            <div className="flex" key={school}>
+                                <div className="me-1">- </div>
+                                    <p className="mb-1" >
+                                        {school}               
+                                    </p>
+                                </div> 
+                            ))}
+                            </div>
                         ))}
                     </div>
                 </div>

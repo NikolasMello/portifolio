@@ -66,8 +66,9 @@
 
   .primary-button {
     @apply transition bg-gradient-to-r from-purple-700 to-blue-600 hover:from-purple-800 hover:shadow-violet-500/60
-     hover:to-blue-700 dark:bg-gradient-to-r dark:from-purple-600 dark:to-blue-600 hover:shadow-lg dark:hover:shadow-violet-600/30
-     dark:hover:from-purple-500 dark:hover:to-blue-500;
+    hover:to-blue-700 dark:bg-gradient-to-r dark:from-purple-600 dark:to-blue-600 hover:shadow-lg dark:hover:shadow-violet-600/30
+    dark:hover:from-purple-500 dark:hover:to-blue-500 inline-flex items-center justify-center px-6 py-2 font-semibold leading-6 text-sm  text-white rounded-md
+    shadow-violet-800/50 hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full md:w-fit; 
   }
 
   .bg-gradient-top{
@@ -120,7 +121,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply max-w-[8px];
+    @apply max-w-[8px] max-h-[8px];
   }
 
   ::-webkit-scrollbar-track {

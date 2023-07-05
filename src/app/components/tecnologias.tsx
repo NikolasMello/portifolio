@@ -26,43 +26,37 @@ export default function Tecnologias (){
                     <div className="grid grid-cols-4 text-center pt-4">
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
                             <FaReact className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">React</span>
+                            <span className="font-semibold select-none">React</span>
                         </div>
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
                             <FaAngular className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">Angular</span>
+                            <span className="font-semibold select-none">Angular</span>
                         </div>
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
                             <FaJsSquare className="h-10 w-10  m-auto mb-2" />
-                            <span className="font-semibold">Javascript</span>
+                            <span className="font-semibold select-none">Javascript</span>
                         </div>
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10  m-auto mb-2">
-                                <TypescriptIcon />
-                            </div>
-                            <span className="font-semibold">Typescript</span>
+                            <TypescriptIcon className="h-10 w-10  m-auto mb-2" />
+                            <span className="font-semibold select-none">Typescript</span>
                         </div>
                     </div>
                     <div className="grid grid-cols-4 text-center pt-4">
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
                             <FaHtml5 className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">HTML</span>
+                            <span className="font-semibold select-none">HTML</span>
                         </div>
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
                             <FaCss3Alt className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">CSS</span>
+                            <span className="font-semibold select-none">CSS</span>
                         </div>
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10 m-auto mb-2">
-                                <MuiIcon />
-                            </div>
-                            <span className="font-semibold">Material UI</span>
+                            <MuiIcon className="h-10 w-10 m-auto mb-2" />
+                            <span className="font-semibold select-none">Material UI</span>
                         </div>
                         <div className="col-span-2 md:col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10 m-auto mb-2">
-                                <TailwindCssIcon />
-                            </div>
-                            <span className="font-semibold">Tailwind CSS</span>
+                                <TailwindCssIcon className="h-10 w-10 m-auto mb-2" />
+                            <span className="font-semibold select-none">Tailwind CSS</span>
                         </div>
                     </div>
                 </div>
@@ -78,23 +72,21 @@ export default function Tecnologias (){
                     <div className="grid grid-cols-2 text-center pt-4">
                         <div className="col-span-1 py-4 text-base icon-hover">
                             <FaJava className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">Java</span>
+                            <span className="font-semibold select-none">Java</span>
                         </div>
                         <div className="col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10 m-auto mb-2">
-                                <SpringBootIcon />
-                            </div>
-                            <span className="font-semibold">Spring boot</span>
+                            <SpringBootIcon className="h-10 w-10 m-auto mb-2" />
+                            <span className="font-semibold select-none">Spring boot</span>
                         </div>
                     </div>
                     <div className="grid grid-cols-2 text-center pt-4">
                         <div className="col-span-1 py-4 text-base icon-hover">
                         <FaDatabase className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">SQL</span>
+                            <span className="font-semibold select-none">SQL</span>
                         </div>
                         <div className="col-span-1 py-4 text-base icon-hover">
                             <FaNodeJs className="h-10 w-10 m-auto mb-2" />
-                            <span className="font-semibold">Node JS</span>
+                            <span className="font-semibold select-none">Node JS</span>
                         </div>
                     </div>
                 </div>
@@ -109,24 +101,18 @@ export default function Tecnologias (){
                     <h5 className="primary-text py-4">Design</h5>
                     <div className="grid grid-cols-2 text-center pt-4">
                         <div className="col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10 m-auto mb-2" >
-                                <PhotoShopIcon  />
-                            </div>
-                            <span className="font-semibold">Photoshop</span>
+                            <PhotoShopIcon className="h-10 w-10 m-auto mb-2" />
+                            <span className="font-semibold select-none">Photoshop</span>
                         </div>
                         <div className="col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10 m-auto mb-2" >
-                                <IllustratorIcon />
-                            </div>
-                            <span className="font-semibold">Illustrator</span>
+                            <IllustratorIcon className="h-10 w-10 m-auto mb-2" />
+                            <span className="font-semibold select-none">Illustrator</span>
                         </div>
                     </div>
                     <div className="grid grid-cols-2 text-center pt-4">
                         <div className="col-span-1 py-4 text-base icon-hover">
-                            <div className="h-10 w-10 m-auto mb-2" >
-                                <AdobeXdIcon />
-                            </div>
-                            <span className="font-semibold">Javascript</span>
+                            <AdobeXdIcon className="h-10 w-10 m-auto mb-2" />
+                            <span className="font-semibold select-none">Javascript</span>
                         </div>
                     </div>
                 </div>

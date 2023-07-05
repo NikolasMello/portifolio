@@ -22,9 +22,7 @@ export default function ProjetosContent(){
                                 {projeto.icons}
                             </div>   
                             <Link href={projeto.link}>
-                                <button className="primary-button flex w-full md:w-32 justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white
-                                    shadow-md shadow-violet-800/50 hover:bg-violet-500 focus-visible:outline focus-visible:outline-2
-                                    focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                <button className="primary-button">
                                     Acessar
                                 </button>
                             </Link>

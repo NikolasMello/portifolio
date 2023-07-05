@@ -67,7 +67,7 @@ export const dataProjetos:dataProjeto[] = [
         ],
         image:PortifolioImage,
         thumb:PortifolioThumb,
-        link:"/projetos/react-quiz"
+        link:"/projetos/site-portifolio"
     },
     {
         id: 3,

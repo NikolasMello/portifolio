@@ -1,4 +1,6 @@
-export default function TypescriptIcon({className = ""}) {
+import { CustomIcon } from "@/app/types/customIcon";
+
+const TypescriptIcon:React.FC<CustomIcon> =({className})=> {
 
     return (
         <svg id="adobe-xd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className={className}>
@@ -6,3 +8,5 @@ export default function TypescriptIcon({className = ""}) {
         </svg>
     )
 }
+
+export default TypescriptIcon;

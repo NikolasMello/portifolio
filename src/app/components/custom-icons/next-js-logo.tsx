@@ -1,4 +1,6 @@
-export default function NextJSLogo({className = ""}){
+import { CustomIcon } from "@/app/types/customIcon";
+
+const NextJSLogo:React.FC<CustomIcon> =({className})=>{
     return (
         <svg aria-label="Next.js logotype" height="18" role="img" viewBox="0 0 394 79" className={className}>
             <path d="M261.919 0.0330722H330.547V12.7H303.323V79.339H289.71V12.7H261.919V0.0330722Z" fill="currentColor"></path>
@@ -11,3 +13,5 @@ export default function NextJSLogo({className = ""}){
         </svg>
     )
 }
+
+export default NextJSLogo;

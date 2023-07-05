@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: { children: React.ReactNode}) {
 
   return (
-    <html lang="en">
-      <body className={nunito.className}>
+    <html lang="pt-br">
+      <body className={nunito.className} suppressHydrationWarning={true}>
         <Header />
         {children}
         <Footer />  

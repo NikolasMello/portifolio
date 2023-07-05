@@ -2,10 +2,12 @@ import { ReactElement } from "react";
 import { FaAngular, FaJava, FaReact } from "react-icons/fa";
 import TypescriptIcon from "../components/custom-icons/typescript-icon";
 import TailwindCssIcon from "../components/custom-icons/tailwind-css-icon";
+import SpringBootIcon from "../components/custom-icons/spring-boot-icon";
 
 export type Languages = {
     title: string;
     level: string;
+    schools:string[]
 }
 
 export type Course = {
@@ -27,16 +29,18 @@ type textItem = {
 
 export type Resume = {
     name: string;
-    about: string;
-    experience: string;
+    about: string[];
+    experience: string[];
     courses: Course[];
     languages: Languages[]
 }
 
 export const myData:Resume = {
     name: "Nikolas Mello",
-    about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus et cumque repellat! Omnis, eos, ipsa aspernatur, maxime molestiae minima saepe expedita laboriosam debitis quia corporis assumenda alias animi iusto vel?",
-    experience: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti nisi esse sapiente totam laudantium numquam aut deserunt amet. Error animi dolore doloribus laudantium ipsa magni, provident impedit nobis cumque.",
+    about: ["Fascinado por desenvolver interfaces funcionais com design agradável e fluído que facilitam a interativadade dos usuários utilizando React JS ou Angular.","Recentemente descobri a versatilidade do framework Tailwind CSS que trás grande velocidade para o desenvolvimento de aplicações altamente customizáveis."],
+    experience: ["No início da minha carreira como desenvolvedor atuei como freelancer construindo landing pages com React JS e Material UI(um dos meus frameworks favoritos).",
+    "Após alguns meses comecei a trabalhar como desenvolvedor FullStack na eBravo, onde a maior parte dos projetos seguem a arquitetura Angular Typescript + Springboot e o fluxo de desenvolvimento é baseado na metodologia ágil Scrum. As atividades comuns do meu dia a dia são: Desenvolvimento de novos módulos e componentes que irão consumir serviços da API, Angular forms e validações," +
+    "Desenvolvimento dos serviços na API Restful de acordo com as regras de negócios, CRUD e emissão de PDFs, txt e csv."],
     courses: [
         {
             id: 1,
@@ -60,6 +64,20 @@ export const myData:Resume = {
                         },    
                     ]
                 },
+                {
+                    id: "spb",
+                    icon: <SpringBootIcon className={'h-10 w-10 mb-4'} />,
+                    content:[
+                        {
+                            id:"spb1",
+                            description:"Desenvolver RestFUL API com Spring Boot;"
+                        },
+                        {
+                            id:"spb2",
+                            description:"Utilizar o OAuth2 e Token JWT com Spring Security."
+                        }   
+                    ]
+                }
             ],
         },
         {
@@ -67,7 +85,7 @@ export const myData:Resume = {
             title: "Understanding Typescript",
             subItens:[
                 {
-                    id: "a",
+                    id: "t",
                     icon: <TypescriptIcon className={'h-10 w-10 mb-4'} />,
                     content:[
                         {
@@ -80,8 +98,12 @@ export const myData:Resume = {
                         },
                         {
                             id:"t3",
-                            description:"Learn how to combine TypeScript with ReactJS or NodeJS / Express."
-                        }  
+                            description:"Learn how to combine TypeScript with ReactJS or NodeJS / Express;"
+                        },
+                        {
+                            id:"t4",
+                            description:"Understand what TypeScript really is about and how it works."
+                        }   
                     ]
                 },
             ],
@@ -91,7 +113,7 @@ export const myData:Resume = {
             title: "Java COMPLETO 2023 Programação Orientada a Objetos +Projetos",
             subItens:[
                 {
-                    id: "a",
+                    id: "j",
                     icon: <FaJava className="h-10 w-10 mb-4" />,
                     content:[
                         {
@@ -105,7 +127,11 @@ export const myData:Resume = {
                         {
                             id:"j3",
                             description:"Acessar banco de dados relacionais com comandos SQL (JDBC) e também com ORM (JPA/Hibernate)."
-                        },  
+                        },
+                        {
+                            id:"j4",
+                            description:"Criar soluções flexíveis, extensíveis e testáveis."
+                        }  
                     ]
                 },
             ],
@@ -114,11 +140,16 @@ export const myData:Resume = {
     languages: [
         {
             title:"Português",
-            level:"Nativo"
+            level:"Nativo",
+            schools:[]
         },
         {
             title:"Inglês",
-            level:"Avançado"
+            level:"Avançado",
+            schools:[
+                "Wizard (2010 - 2013)",
+                "KNN Idiomas (2020 - 2022)"
+            ]
         }
     ]
 }
