@@ -45,8 +45,10 @@ export const funtionalities:Functionality[] = [
     },
     {
         id: 3,
-        title: "Global Styles",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum hic suscipit obcaecati natus nisi porro accusantium blanditiis eos! Necessitatibus sapiente aspernatur soluta tenetur quasi cumque labore aliquid? Incidunt, rerum pariatur.",
+        title: "Utilidade no CSS",
+        description: "O Tailwind CSS trás uma grande praticidade com suas classes," +
+        "porém o conjunto de classes CSS de alguns elementos pode ficar um tanto extenso."+
+        "Abaixo podemos ver algumas definiões padrão para os textos e também um exemplo de calsse para o botão, que será usada várias vezes na página.",
         code:'@tailwind base;\n'+
         '@tailwind components;\n'+
         '@tailwind utilities;\n'+
@@ -93,7 +95,8 @@ export const funtionalities:Functionality[] = [
     {
         id: 4,
         title: "Alert Modal",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum hic suscipit obcaecati natus nisi porro accusantium blanditiis eos! Necessitatibus sapiente aspernatur soluta tenetur quasi cumque labore aliquid? Incidunt, rerum pariatur.",
+        description: "O modal de mensagem pode ser útil em diversas telas de um aplicativo,"+
+        "para evitar repetições fiz um componente que recebe os parâmetros para controlar seu comportamento e ser exibida uma mensagem customizável de sucesso ou falha.",
         code:'"use client"\n'+
         'import { Fragment } from "react"\n'+
         'import { Dialog, Transition } from "@headlessui/react";\n'+
@@ -156,7 +159,8 @@ export const funtionalities:Functionality[] = [
     {
         id: 5,
         title: "Custom Icons",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum hic suscipit obcaecati natus nisi porro accusantium blanditiis eos! Necessitatibus sapiente aspernatur soluta tenetur quasi cumque labore aliquid? Incidunt, rerum pariatur.",
+        description: "Alguns ícones que eu precisava não estavam presentes no Hero Icons nem React Icons,"+
+        "então precisei adiquirir e editar os svgs de outras fontes. Para facilitar a estilização criei componentes referentes a cada ícone que recebem as classes css. ",
         code:'import { CustomIcon } from "@/app/types/customIcon";\n'+
         '\n'+
         'const TypescriptIcon:React.FC<CustomIcon> =({className})=> {\n'+

@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
-import { FaAngular, FaJava, FaReact } from "react-icons/fa";
+import { FaAngular, FaDatabase, FaJava, FaReact } from "react-icons/fa";
 import TypescriptIcon from "../components/custom-icons/typescript-icon";
-import TailwindCssIcon from "../components/custom-icons/tailwind-css-icon";
 import SpringBootIcon from "../components/custom-icons/spring-boot-icon";
 
 export type Languages = {
@@ -37,10 +36,11 @@ export type Resume = {
 
 export const myData:Resume = {
     name: "Nikolas Mello",
-    about: ["Fascinado por desenvolver interfaces funcionais com design agradável e fluído que facilitam a interativadade dos usuários utilizando React JS ou Angular.","Recentemente descobri a versatilidade do framework Tailwind CSS que trás grande velocidade para o desenvolvimento de aplicações altamente customizáveis."],
-    experience: ["No início da minha carreira como desenvolvedor atuei como freelancer construindo landing pages com React JS e Material UI(um dos meus frameworks favoritos).",
-    "Após alguns meses comecei a trabalhar como desenvolvedor FullStack na eBravo, onde a maior parte dos projetos seguem a arquitetura Angular Typescript + Springboot e o fluxo de desenvolvimento é baseado na metodologia ágil Scrum. As atividades comuns do meu dia a dia são: Desenvolvimento de novos módulos e componentes que irão consumir serviços da API, Angular forms e validações," +
-    "Desenvolvimento dos serviços na API Restful de acordo com as regras de negócios, CRUD e emissão de PDFs, txt e csv."],
+    about: ["Devido a minha grande fascinação pelo desenvolvimento Front-end, continuo aprimorando minhas habilidades com React JS e Angular na construção de aplicativos funcionais com ótima performance, design fluído e intuitivo para que os usuários tenham a melhor experiência possível."],
+    experience: ["No início da minha carreira atuei como desenvolvedor freelancer construindo protótipos de landing pages e aplicativos no Adobe XD, e posteriormente atuei no desenvolvimento com React JS e Material UI(um dos meus frameworks favoritos).",
+    "Após alguns meses comecei a trabalhar como desenvolvedor FullStack na eBravo, onde a maior parte dos projetos seguem a arquitetura Angular + Typescript + Springboot e o fluxo de desenvolvimento é baseado na metodologia ágil Scrum.",
+    "Minhas atividades cotidianas comuns são:", "- Desenvolvimento de novos módulos e componentes que irão consumir serviços da API, Angular forms e validações;",
+    "- Desenvolvimento de serviços na API Restful conforme as regras do negócio, CRUD, emissão de PDFs, txt e csv;", "- Code review, Github, deploy e versionamento."],
     courses: [
         {
             id: 1,
@@ -131,6 +131,62 @@ export const myData:Resume = {
                         {
                             id:"j4",
                             description:"Criar soluções flexíveis, extensíveis e testáveis."
+                        }  
+                    ]
+                },
+            ],
+        },
+        {
+            id: 4,
+            title: "Banco de Dados SQL do Zero ao Avançado + Projetos Reais 2023",
+            subItens:[
+                {
+                    id: "sql",
+                    icon: <FaDatabase className="h-10 w-10 mb-4" />,
+                    content:[
+                        {
+                            id:"sql1",
+                            description:"Utilize SQL para consultar um banco de dados;",
+                        },
+                        {
+                            id:"sql2",
+                            description:"Escreva consultas SQL complexas em várias tabelas;",
+                        },
+                        {
+                            id:"sql3",
+                            description:"Crie seu próprio banco de dados ou interaja com bancos de dados existentes."
+                        },
+                        {
+                            id:"sql4",
+                            description:"Modele dados do mundo real e gere relatórios usando SQL."
+                        }  
+                    ]
+                },
+            ],
+        },
+        {
+            id: 5,
+            title: "Curso React + Redux: Fundamentos e 2 Apps do Absoluto ZERO!",
+            subItens:[
+                {
+                    id: "sql",
+                    icon: <FaReact className="h-10 w-10 mb-4" />,
+                    content:[
+                        {
+                            id:"sql1",
+                            description:"Criar componentes em React;",
+                        },
+                        {
+                            id:"sql2",
+                            description:"Aplicar boas práticas de desenvolvimento;",
+                        },
+                        {
+                            id:"sql3",
+                            description:"Desenvolver uma aplicação do zero com React/Redux;"
+                        },
+                        {
+                            id:"sql4",
+                            description:"Aplicar boas práticas de desenvolvimento."
                         }  
                     ]
                 },

@@ -16,7 +16,8 @@ export default function Home() {
               Web Developer
             </h2>
             <p className="p-2"> 
-              Sou um desenvolvedor com foco no Front-end com React e Angular. Sempre bucando as melhores soluções de design e interatividade para o usuário.
+              Desenvolvedor FullStack com foco em aplicativos React e Angular. Sempre
+              buscando as melhores soluções para design, estrutura, interatividade e performance.
             </p>
           </div>
           <div className="col-span-3 md:col-span-2 ">

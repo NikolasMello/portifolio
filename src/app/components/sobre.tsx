@@ -14,10 +14,10 @@ export default function SobreSection(){
                 <div className="col-span-8 md:col-span-5">
                     <div className="p-4 mx-2 my-2 rounded-lg">
                         <h3 className="hidden md:block secondary-text">Sobre</h3>
-                        <p>Sou fascinado por aplicações com design fluído e funcional, sempre buscando melhorias. 
-                            Comecei minha carreira de desenovlvedor como freelancer utilizando React JS e Material UI. 
-                            Atualmente trabalho desenvolvendo aplicações com Angular, Typescript e Springboot. No meu tempo livre
-                            desenvolvo aplicações com React para me manter atualizado sobre o framework.  </p>
+                        <p>Comecei minha carreira de desenvolvedor como freelancer utilizando React JS e Material UI
+                            para construção de landing pages e aplicativos.
+                            Atualmente trabalho desenvolvendo aplicações com Angular, Typescript e Springboot,
+                            enquanto no meu tempo livre me mantenho atualizado sobre alguns frameworks. </p>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,7 @@
 "use client"
-import { FaAngular, FaCheck, FaJava } from "react-icons/fa"
-import TypescriptIcon from "../components/custom-icons/typescript-icon"
 import Image from "next/image"
 import Nikolas from "../../assets/images/nikolas.jpg"
 import { myData } from "./dataAbooutMe"
-import { Langar } from "next/font/google"
 
 export default function SobreContent(){
     return (
@@ -12,16 +9,16 @@ export default function SobreContent(){
             <div className="col-span-8 md:col-span-8 rounded-lg">
                 <div className="px-4 m-2">
                     <div className="grid grid-cols-3 gap-2 items-center">
-                        <div className="col-span-3 md:col-span-2 order-last md:order-none pe-8">
+                        <div className="col-span-3 md:col-span-2 order-last md:order-none md:pe-8">
                             <h3 className="primary-text">{myData.name}</h3>
                             {myData.about.map((about)=> (
-                                <p className="mb-1" key={about}>
+                                <p className="mb-1 text-justify" key={about}>
                                     {about}
                                 </p>
                             ))}  
                             <h3 className="primary-text">Experiência Profissional</h3>
                             {myData.experience.map((experience)=> (
-                                <p key={experience} className="mb-1">
+                                <p key={experience} className="mb-1 text-justify">
                                     {experience} 
                                 </p>
                             ))}

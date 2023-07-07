@@ -21,7 +21,7 @@ export default function ProjetosContent(){
                             <div className="flex text-pattern-color mb-8 gap-3 w-full items-center">
                                 {projeto.icons}
                             </div>   
-                            <Link href={projeto.link}>
+                            <Link href={projeto.link} target="_blank">
                                 <button className="primary-button">
                                     Acessar
                                 </button>
@@ -30,7 +30,12 @@ export default function ProjetosContent(){
                         
                         <div className="col-span-3 md:col-span-1 p-2">
                             <h3 className="primary-text md:hidden">{projeto.title}</h3>
-                            <div className="w-full rounded-lg overflow-hidden theme-border">
+                            <div className="w-full rounded-lg overflow-hidden theme-border relative">
+                            {projeto.status !== "Finalizado" ? 
+                                <div className="bg-rose-600 h-7 w-24 rounded-full absolute mt-6 right-2 text-white text-center text-sm pt-1" >
+                                    <span> Em Breve</span>
+                                </div> : 
+                                ""} 
                                 <Image src={projeto.image} alt="" width={362} />
                             </div>
                         </div>

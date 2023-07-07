@@ -112,24 +112,30 @@ export default function Header(){
                   >
                    { darkTheme ? ( <SunIcon className="h-6 w-6" /> ) : ( <MoonIcon className="h-6 w-6" /> ) }  
               </button>
-              <button
-                    type="button"
-                    className="rounded-full p-1 text-base hover:text-purple-700 dark:hover:text-purple-400"
-                  >
-                    <FaGithub className="h-6 w-6" />
-              </button>
-              <button
-                    type="button"
-                    className="rounded-full p-1 text-base hover:text-indigo-700 dark:hover:hover:text-indigo-400"
-                  >
-                    <FaLinkedin className="h-6 w-6" />
-              </button>
-              <button
-                    type="button"
-                    className="rounded-full p-1 text-base hover:text-blue-600 dark:hover:hover:text-blue-400"
-                  >
-                    <FaBehanceSquare className="h-6 w-6" />
-              </button>
+              <Link href="https://github.com/NikolasMello" target="_blank">
+                <button
+                      type="button"
+                      className="rounded-full p-1 text-base hover:text-purple-700 dark:hover:text-purple-400"
+                    >
+                      <FaGithub className="h-6 w-6" />
+                </button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/nikolas-mello-a623481b2/" target="_blank">
+                <button
+                      type="button"
+                      className="rounded-full p-1 text-base hover:text-indigo-700 dark:hover:hover:text-indigo-400"
+                    >
+                      <FaLinkedin className="h-6 w-6" />
+                </button>
+              </Link>
+              <Link href="https://www.behance.net/nikolasmello" target="_blank">
+                <button
+                      type="button"
+                      className="rounded-full p-1 text-base hover:text-blue-600 dark:hover:hover:text-blue-400"
+                    >
+                      <FaBehanceSquare className="h-6 w-6" />
+                </button>
+              </Link>
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -167,20 +173,23 @@ export default function Header(){
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="https://github.com/NikolasMello"
+                    target="_blank"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-600 hover:text-purple-700 overflow-hidden"
                   >
                     <div className="flex  items-center"> <FaGithub fontSize={22} /> <span className="ml-2">Github</span></div>
                     
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/nikolas-mello-a623481b2/"
+                    target="_blank"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-600 hover:text-indigo-700 overflow-hidden"
                   >
                     <div className="flex items-center"> <FaLinkedin fontSize={22}/> <span className="ml-2">LinkedIn</span></div>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.behance.net/nikolasmello"
+                    target="_blank"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-600 hover:text-blue-600 overflow-hidden"
                   >
                     <div className="flex  items-center"> <FaBehanceSquare fontSize={22} /> <span className="ml-2">Behance</span></div>

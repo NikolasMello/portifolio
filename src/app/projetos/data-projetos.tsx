@@ -15,6 +15,7 @@ export type dataProjeto = {
     id: number;
     reverse:boolean;
     title: string;
+    status: string;
     prev: string;
     description: string;
     icons: ReactElement<SVGElement>[];
@@ -29,9 +30,11 @@ export const dataProjetos:dataProjeto[] = [
         id: 1,
         reverse:true,
         title: "React Quiz",
+        status: "Finalizado",
         prev:"Um quiz dinâmico com navegação entre questões e exibição do resultado final.",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus et cumque repellat! Omnis, eos, ipsa aspernatur, "
-        + "maxime molestiae minima saepe expedita laboriosam debitis quia corporis assumenda alias animi iusto vel?",
+        description: "Um aplicativo com perguntas básicas relacionadas ao framework React com navegação entre as questões,"+
+        "painel de visualização das questões respondidas e um modal que exibe o resutlado final com relatório do número de acertos,"+
+        " nota, situação(aprovado, reprovado) e correção das questões.",
         icons:[
             <FaReact className='w-8 h-8 ' key={1} />,
             <TypescriptIcon className={'w-8 h-8 '} key={2}/>,
@@ -50,9 +53,11 @@ export const dataProjetos:dataProjeto[] = [
         id: 2,
         reverse:false,
         title: "Site Portifólio",
-        prev:"Estrutura de como desenvolvi esse portifólio com NEXT JS e Tailwind CSS.",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus et cumque repellat! Omnis, eos, ipsa aspernatur, "
-        + "maxime molestiae minima saepe expedita laboriosam debitis quia corporis assumenda alias animi iusto vel?",
+        status: "Finalizado",
+        prev:"Estrutura e funcionalidaes desse portifólio com NEXT JS e Tailwind CSS.",
+        description: "Este portifólio por si só foi um projeto desenvolvido com a versão "+ 
+        "mais recente do NextJS e tailwind CSS. Aqui você irá encontrar a descrição de algumas "+
+        "funcionalidades que implementei no meu app, como tema white/dark e envio de e-mails.",
         icons:[
             <FaReact className='w-8 h-8 ' key={1} />,
             <TypescriptIcon className={'w-8 h-8 '} key={2}/>,
@@ -73,9 +78,9 @@ export const dataProjetos:dataProjeto[] = [
         id: 3,
         reverse:true,
         title: "Angular App",
+        status: "Em breve",
         prev:"Aplicativo angular de plataforma de estudos com tela de login e serviços CRUD.",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus et cumque repellat! Omnis, eos, ipsa aspernatur, "
-        + "maxime molestiae minima saepe expedita laboriosam debitis quia corporis assumenda alias animi iusto vel?",
+        description: "Um aplicativo angular de plataforma de estudos com tela de login e serviços CRUD. Esse projeto encontra-se em desenvolvimento.",
         icons:[
             <FaAngular className='w-8 h-8' key={1} />,
             <TypescriptIcon className={'w-8 h-8 '} key={2}/>,
@@ -88,6 +93,6 @@ export const dataProjetos:dataProjeto[] = [
         ],
         image:AngularAppImage,
         thumb:AngularAppThumb,
-        link:"/projetos/react-quiz"
+        link:"https://github.com/NikolasMello/angular-academy-app"
     }
 ]

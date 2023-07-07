@@ -13,7 +13,7 @@ export default function Projetos() {
                 </div>
                 {dataProjetos.map((projeto) => (
                 <div className="col-span-3 md:col-span-1" key={projeto.id}>
-                    <Link href={projeto.link}>
+                    <Link href={projeto.link}  target="_blank">
                     <div className="flex justify-center -mb-[9px]">
                         <div className="w-3/4">
                             <div className="h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent  w-full"></div>
@@ -21,8 +21,13 @@ export default function Projetos() {
                     </div>
                     <div className="px-4 py-2 mx-2 my-2 rounded-lg card-shadow bg-card transition-all duration-500 hover:bg-slate-200 dark:hover:bg-slate-800">
                         <h5 className="px-1 primary-text">{projeto.title}</h5>
-                        <div className="my-2 rounded-md overflow-hidden theme-border">
-                            <Image src={projeto.thumb} alt="" width={345} />
+                        <div className="my-2 rounded-md overflow-hidden theme-border relative">
+                            {projeto.status !== "Finalizado" ? 
+                            <div className="bg-rose-600 h-7 w-24 rounded-full absolute mt-3 right-2 text-white text-center text-sm pt-1" >
+                                <span> Em Breve</span>
+                            </div> : 
+                            ""}  
+                            <Image src={projeto.thumb} alt="" width={345}></Image>
                         </div>
                         <p className="px-1 py-3">{projeto.prev}</p>
                         <div className="flex border-top py-3 px-1 text-base gap-3 items-center">
