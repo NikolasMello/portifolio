@@ -1,6 +1,4 @@
-
-
-export const sendMail = async (data:any) => fetch('api/contact', 
+export const sendEmail = async (data:any) => fetch('api/contact', 
     {
         method:"POST",
         body:JSON.stringify(data),

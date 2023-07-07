@@ -32,7 +32,7 @@ export default function SitePortifolioContent(){
         <div className="max-w-7xl mx-auto px-4 xl:px-5 pt-20 pb-3 scroll-smooth">
 
             <div className="grid grid-cols-5 gap-2">
-                <div className="col-span-3 md:col-span-1 text-base px-2 py-4">
+                <div className="hidden md:flex col-span-3 md:col-span-1 text-base px-2 py-4">
                     <div className="fixed">
                     <h5 className="secondary-text py-4 px-2">Navegação</h5>
                     {funtionalities.slice(1).map((item)=> (

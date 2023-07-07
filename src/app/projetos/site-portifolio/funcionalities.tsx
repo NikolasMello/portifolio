@@ -193,31 +193,39 @@ export const funtionalities:Functionality[] = [
       '\n'+
       'const nodemailer = require(\'nodemailer\')\n'+
       '\n'+
-      'export default function handler(\n'+
+      'export default async function handler(\n'+
       '  req:NextApiRequest,\n'+
       '  res:NextApiResponse<ResponseData>\n'+
       '  ){\n'+
       '    const emailData:Email = req.body;\n'+
       '    let transporter = nodemailer.createTransport({\n'+
       '        host:\'smtp.gmail.com\',\n'+
-      '        port: 587,\n'+
+      '        port: 465,\n'+
+      '        secure:true,\n'+
       '        auth:{\n'+
       '            user: process.env.USER_EMAIL,\n'+
       '            pass: process.env.USER_PASSWORD\n'+
       '        },\n'+
       '    });\n'+
       '\n'+
-      '    transporter.sendMail({\n'+
-      '          from: `${emailData.name}" - " <${emailData.email}>`, \n'+
-      '          to: process.env.USER_EMAIL,\n'+
-      '          replyTo: emailData.email, \n'+
-      '          subject: emailData.subject, \n'+
-      '          text: emailData.message, \n'+
-      '          html: `<b>${emailData.name}</b><br /> ${emailData.message}`, \n'+
-      '        }).then((response:any) => { res.status(200).send(response)\n'+
-      '        }).catch((error:any)=> {res.status(500).send(error)\n'+
-      '        })  \n'+
-      '            \n'+
-      '}'
+      '    try {\n'+
+      '      await transporter.sendMail({\n'+
+      '        from: `${emailData.name}" - " <${emailData.email}>`, \n'+
+      '        to: process.env.USER_EMAIL,\n'+
+      '        replyTo: emailData.email, \n'+
+      '        subject: emailData.subject, \n'+
+      '        text: emailData.message, \n'+
+      '        html: `<b>${emailData.name}</b><br /> ${emailData.message}`, \n'+
+      '      });\n'+
+      '\n'+
+      '      return res.status(200).json({message:"E-mail enviado com sucessso!"})\n'+
+      '    } catch (error) {\n'+
+      '      return res.status(400).json({message:"Falha no envio de e-mail, tente novamente mais tarde."})\n'+
+      '    }\n'+
+      '           \n'+
+      '}\n'+
+      '\n'+
+      '\n'+
+      ''
   },
 ]

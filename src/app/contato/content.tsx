@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Email } from "../../../model/dataTypes"
 import AlertModal from "../components/alert"
 import { AlertData } from "../types/alertData";
+import { sendEmail } from "../../../lib/api"
 
 export default function ContactContent(){
 
@@ -37,23 +38,11 @@ export default function ContactContent(){
         setAlertModal(modal)
     }
 
-    const sendEmail = async(e:any)=> {
+    const sendContactEmail = async(e:any)=> {
         e.preventDefault();
-        let data: Email = {
-            name: e.target.name.value,
-            email: e.target.email.value,
-            subject: e.target.subject.value,
-            message: e.target.message.value,
-        }  
-        setEmail(data)
         setLoading(true)
-        const response = await fetch("/api/contact", {
-            method:"POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify(email)
-        })
+
+        const response = await sendEmail(email);
         if(response.ok){
             changeModalStatus(true, true, "Email Enviado com sucesso!")
                 e.target.name.value = "";
@@ -67,6 +56,11 @@ export default function ContactContent(){
         }
     }
 
+    const handleInput:(e:any)=>void = (e)=>{
+        const mailObj = {...email, [e.target.name]: e.target.value};
+        setEmail(mailObj);
+    }
+
     return (
         <div className="grid grid-cols-8 gap-2 max-w-7xl items-center mx-auto px-4 md:px-10 pt-20 pb-3">
             <div className="col-span-8 md:col-span-5">
@@ -75,29 +69,29 @@ export default function ContactContent(){
             <div className="col-span-8 md:col-span-3">
                 <div className="p-4 mx-2 my-2 rounded-lg">
                     <h3 className="secondary-text">Contato</h3>
-                <form onSubmit={sendEmail} autoComplete="off">
+                <form onSubmit={sendContactEmail} autoComplete="off">
                     <div className="space-y-8">
                     <div className="mt-8 max-w-md">
                         <div className="grid grid-cols-1 gap-6">
                         <label className="block">
                             <span className="text-base">Nome</span>
                             <input type="text"  className="form-input  focus:invalid:border-rose-400 focus:invalid:ring-rose-400"
-                            name="name" required placeholder="Nome" />
+                            name="name" required placeholder="Nome" onChange={handleInput} />
                         </label>
                         <label className="block">
                             <span className="text-base">Email</span>
                             <input type="email" className="form-input  focus:invalid:border-rose-400 focus:invalid:ring-rose-400"
-                            name="email" required placeholder="nome@example.com" />
+                            name="email" required placeholder="nome@example.com"  onChange={handleInput} />
                         </label>
                         <label className="block">
                             <span className="text-base">Assunto</span>
                             <input type="text" className="form-input focus:invalid:border-rose-400 focus:invalid:ring-rose-400"
-                            name="subject" required />
+                            name="subject" required  onChange={handleInput} />
                         </label>
                         <label className="block">
                             <span className="text-base">Mensagem</span>
                             <textarea className="form-input resize-none focus:invalid:border-rose-400 focus:invalid:ring-rose-400"
-                            name="message" required rows={4} minLength={30}></textarea>
+                            name="message" required rows={4} minLength={10}  onChange={handleInput}></textarea>
                         </label>
                         </div>
                     </div>
