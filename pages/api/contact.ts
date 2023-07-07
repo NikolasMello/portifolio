@@ -11,7 +11,7 @@ export default function handler(
     const emailData:Email = req.body;
     let transporter = nodemailer.createTransport({
         host:'smtp.gmail.com',
-        port: 587,
+        port: 465,
         auth:{
             user: process.env.USER_EMAIL,
             pass: process.env.USER_PASSWORD
