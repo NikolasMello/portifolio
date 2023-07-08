@@ -13,6 +13,7 @@ export type Course = {
     id: number;
     title: string;
     subItens: SubItem[];
+    finished: boolean
 }
 
 type SubItem = {
@@ -79,6 +80,7 @@ export const myData:Resume = {
                     ]
                 }
             ],
+            finished: true
         },
         {
             id: 2,
@@ -107,6 +109,7 @@ export const myData:Resume = {
                     ]
                 },
             ],
+            finished: true
         },
         {
             id: 3,
@@ -135,6 +138,7 @@ export const myData:Resume = {
                     ]
                 },
             ],
+            finished: true
         },
         {
             id: 4,
@@ -163,6 +167,7 @@ export const myData:Resume = {
                     ]
                 },
             ],
+            finished: true
         },
         {
             id: 5,
@@ -191,6 +196,7 @@ export const myData:Resume = {
                     ]
                 },
             ],
+            finished: false
         }
     ],
     languages: [

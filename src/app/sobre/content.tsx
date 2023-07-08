@@ -37,7 +37,7 @@ export default function SobreContent(){
                 </div>
                 <div className="grid grid-cols-3 gap-4 text-base">
                         {myData.courses.map((course)=> (
-                            <div className="col-span-3 md:col-span-1 bg-card rounded-lg p-4" key={course.id}>
+                            <div className="col-span-3 md:col-span-1 bg-card rounded-lg p-4 relative" key={course.id}>
                                 <h6 className="secondary-text min-h-[72px] border-bottom">
                                     {course.title}
                                 </h6>                                
@@ -54,6 +54,7 @@ export default function SobreContent(){
                                             ))}    
                                         </div>
                                     ))}
+                                    {course.finished ? null : <div className="px-4 py-1 rounded-full bg-violet-600 w-fit text-white text-sm absolute bottom-6">Em Andamento</div>}
                             </div>
                         ))}
                 </div>
