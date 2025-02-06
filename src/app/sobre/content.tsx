@@ -6,7 +6,7 @@ import { myData } from "./dataAbooutMe"
 export default function SobreContent(){
     return (
         <div className="grid grid-cols-8 gap-2 max-w-7xl items-center mx-auto px-4 md:px-10 pt-20 pb-3">
-            <div className="col-span-8 md:col-span-8 rounded-lg">
+            <div className="col-span-8 md:col-span-8 rounded-3xl">
                 <div className="px-4 m-2">
                     <div className="grid grid-cols-3 gap-2 items-center">
                         <div className="col-span-3 md:col-span-2 order-last md:order-none md:pe-8">
@@ -24,20 +24,20 @@ export default function SobreContent(){
                             ))}
                         </div>
                         <div className="col-span-3 md:col-span-1 md:p-8">
-                        <div className="w-full rounded-lg overflow-hidden">
+                        <div className="w-full rounded-3xl overflow-hidden">
                             <Image src={Nikolas} alt="" width={445} />
                         </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="col-span-8 md:col-span-8 rounded-lg px-4">
+            <div className="col-span-8 md:col-span-8 rounded-3xl px-4">
                 <div className="mx-2 my-2">
                     <h3 className="primary-text">Cursos e Tecnologias</h3>
                 </div>
-                <div className="grid grid-cols-3 gap-4 text-base">
+                <div className="grid grid-cols-3 gap-6 text-base">
                         {myData.courses.map((course)=> (
-                            <div className="col-span-3 md:col-span-1 bg-card rounded-lg p-4 relative" key={course.id}>
+                            <div className="col-span-3 md:col-span-1 bg-card rounded-3xl p-4 relative" key={course.id}>
                                 <h6 className="secondary-text min-h-[72px] border-bottom">
                                     {course.title}
                                 </h6>                                
@@ -59,12 +59,12 @@ export default function SobreContent(){
                         ))}
                 </div>
             </div>
-            <div className="col-span-8 md:col-span-8 rounded-lg px-4">
+            <div className="col-span-8 md:col-span-8 rounded-3xl px-4">
                 <div className="mx-2 my-2">
                     <h3 className="primary-text">Idiomas</h3>
                 </div>
-                <div className="grid grid-cols-3 gap-4 items-center text-base">
-                    <div className="col-span-3 md:col-span-1 bg-card rounded-lg p-4">
+                <div className="grid grid-cols-3 gap-6 items-center text-base">
+                    <div className="col-span-3 md:col-span-1 bg-card rounded-3xl p-4">
                         {myData.languages.map((language)=> (
                             <div key={language.title} className="mb-4">
                         <h6 className="secondary-text" >{language.title}</h6>

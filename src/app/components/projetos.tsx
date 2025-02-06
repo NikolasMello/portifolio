@@ -19,7 +19,7 @@ export default function Projetos() {
                             <div className="h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent  w-full"></div>
                         </div>
                     </div>
-                    <div className="px-4 py-2 mx-2 my-2 rounded-lg card-shadow bg-card transition-all duration-500 hover:bg-slate-200 dark:hover:bg-slate-800">
+                    <div className="px-4 py-2 mx-2 my-2 rounded-3xl card-shadow bg-card transition-all duration-500 hover:bg-slate-200 dark:hover:bg-slate-800">
                         <h5 className="px-1 primary-text">{projeto.title}</h5>
                         <div className="my-2 rounded-md overflow-hidden theme-border relative">
                             {projeto.status !== "Finalizado" ? 

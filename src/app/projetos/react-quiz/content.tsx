@@ -83,18 +83,18 @@ export default function ReactQuizContent(){
 
     const answerLabelStyle:(correctAnswer:boolean, selectedAnswer:boolean)=> string =(correctAnswer, selectedAnswer)=> {
         if(correctAnswer && selectedAnswer){
-            return "bg-emerald-300 dark:bg-emerald-400 bg-opacity-30 dark:bg-opacity-50 dark:text-white p-2 mb-2 rounded-lg";
+            return "bg-emerald-300 dark:bg-emerald-400 bg-opacity-30 dark:bg-opacity-50 dark:text-white p-2 mb-2 rounded-3xl";
         } else if(!correctAnswer && selectedAnswer) {
-            return "bg-rose-400 bg-opacity-30 dark:bg-opacity-60 p-2 mb-2 dark:bg-opacity-50 dark:text-white  rounded-lg";
+            return "bg-rose-400 bg-opacity-30 dark:bg-opacity-60 p-2 mb-2 dark:bg-opacity-50 dark:text-white  rounded-3xl";
         } else {
-            return "p-2 mb-2 rounded-lg";
+            return "p-2 mb-2 rounded-3xl";
         }
         
     }
 
     const loadCode:(code:string)=>string =(code)=>{
         if(code.length > 0){
-            return "text-gray-700 dark:text-gray-50 p-4 rounded-lg bg-sky-100 dark:bg-sky-950 my-4 overflow-x-auto select-none";
+            return "text-gray-700 dark:text-gray-50 p-4 rounded-3xl bg-sky-100 dark:bg-sky-950 my-4 overflow-x-auto select-none";
         } else {
             return "";
         }      
@@ -107,7 +107,7 @@ export default function ReactQuizContent(){
                 <h3 className="text-sky-500">React Quiz</h3>
             </div>
             <div className="col-span-3">
-                <div className="grid grid-cols-3 gap-2 bg-card card-shadow rounded-lg md:p-3 min-h-[26rem]">
+                <div className="grid grid-cols-3 gap-2 bg-card card-shadow rounded-3xl md:p-3 min-h-[26rem]">
                     <div className="col-span-3 md:col-span-2 py-2 px-4 md:border-right">
                         <form className="min-h-[22rem] ">
                         <h6 className="text-sky-500 mb-2 select-none">Questions</h6>
@@ -117,7 +117,7 @@ export default function ReactQuizContent(){
                             <pre className={loadCode(quiz[currentQuestion].content)}>{quiz[currentQuestion].content}</pre>
                             <div className="my-6" >
                                 {quiz[currentQuestion].answers.map((answer) => (
-                                        <div className="flex items-center gap-x-3 hover:bg-sky-100 dark:hover:bg-sky-500 dark:hover:bg-opacity-10 rounded-lg transition duration-300" key={answer.id}>
+                                        <div className="flex items-center gap-x-3 hover:bg-sky-100 dark:hover:bg-sky-500 dark:hover:bg-opacity-10 rounded-3xl transition duration-300" key={answer.id}>
                                         <input
                                             id={answer.id.toString()}
                                             name={answer.id.toString()}
@@ -187,21 +187,21 @@ export default function ReactQuizContent(){
                             <h4 className="text-sky-500 text-center" ref={myModalTitle}>Result</h4>
                                     <div className="grid grid-cols-3 gap-2 mt-4">
                                         <div className="col-span-3 md:col-span-1  text-center">
-                                            <div className="ring-4 rounded-lg w-44 h-40 mx-auto py-2 mb-4">
+                                            <div className="ring-4 rounded-3xl w-44 h-40 mx-auto py-2 mb-4">
                                                 <h6 className="text-sky-500">Marks</h6>
                                                 <FaPen className={result.getMarks >= 7 ? "mx-auto h-8 w-8 m-4 text-emerald-500" : "mx-auto h-8 w-8 m-4 text-rose-500"} />
                                                 <span className={result.getMarks >= 7 ? "my-2 font-bold text-emerald-500" : "my-2 font-bold text-rose-500"}>{result.getMarks} / {quiz.length}</span>
                                             </div>
                                         </div>
                                         <div className="col-span-3 md:col-span-1 text-center">
-                                        <div className="ring-4 rounded-lg w-44 h-40 mx-auto py-2 mb-4">
+                                        <div className="ring-4 rounded-3xl w-44 h-40 mx-auto py-2 mb-4">
                                                 <h6 className="text-sky-500">Score</h6>
                                                 <FaCalculator className={result.getScore >= 7 ? "mx-auto h-8 w-8 m-4 text-emerald-500" : "mx-auto h-8 w-8 m-4 text-rose-500"} />
                                                 <span className={result.getScore >= 7 ?  "my-2 font-black text-emerald-500" : "my-2 font-black text-rose-500"}>{result.getScore}</span>
                                             </div>
                                         </div>
                                         <div className="col-span-3 md:col-span-1  text-center">
-                                            <div className="ring-4 rounded-lg w-44 h-40 mx-auto py-2 mb-4">
+                                            <div className="ring-4 rounded-3xl w-44 h-40 mx-auto py-2 mb-4">
                                                 <h6 className="text-sky-500">Situation</h6>
                                                 {   
                                                     result.getSituation === "Approved" ? 
@@ -223,7 +223,7 @@ export default function ReactQuizContent(){
                                                                     </div>
                                                                 ))}
                                                             </div>
-                                                            <p className="my-2 p-3 border border-emerald-500 border-opacity-50 rounded-lg font-semibold">{result.explanation}</p>
+                                                            <p className="my-2 p-3 border border-emerald-500 border-opacity-50 rounded-3xl font-semibold">{result.explanation}</p>
                                                         </div>
                                                     ))}  
                                                 </div>                                        

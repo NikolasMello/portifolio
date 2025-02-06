@@ -7,7 +7,7 @@ export default function SitePortifolioContent(){
 
     const loadCode:(code:string)=>string =(load)=>{        
         if(load.length > 0){
-            return "rounded-lg bg-sky-950 w-full overflow-x-auto p-4 text-gray-300 dark:text-gray-50 mb-4"
+            return "rounded-3xl bg-sky-950 w-full overflow-x-auto p-4 text-gray-300 dark:text-gray-50 mb-4"
         } else {
             return "hidden"   
         }        
@@ -36,7 +36,7 @@ export default function SitePortifolioContent(){
                     <div className="fixed">
                     <h5 className="secondary-text py-4 px-2">Navegação</h5>
                     {funtionalities.slice(1).map((item)=> (
-                    <div onClick={()=> showRef(item.id)}  className="flex text-base rounded-lg py-1 mb-1 hover:bg-slate-200 dark:hover:bg-indigo-950 px-2 cursor-pointer transition duration-150" key={item.id}>
+                    <div onClick={()=> showRef(item.id)}  className="flex text-base rounded-3xl py-1 mb-1 hover:bg-slate-200 dark:hover:bg-indigo-950 px-2 cursor-pointer transition duration-150" key={item.id}>
                         <span className="select-none font-semibold">{item.title}</span>
                     </div>
                     ))}

@@ -67,7 +67,7 @@ export default function ContactContent(){
                 <Image src={MailImage} width={1000}  alt="mailImage" priority />
             </div>
             <div className="col-span-8 md:col-span-3">
-                <div className="p-4 mx-2 my-2 rounded-lg">
+                <div className="p-4 mx-2 my-2 rounded-3xl">
                     <h3 className="secondary-text">Contato</h3>
                 <form onSubmit={sendContactEmail} autoComplete="off">
                     <div className="space-y-8">

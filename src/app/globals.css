@@ -125,11 +125,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-blue-900 bg-opacity-50 rounded-full;
+    @apply bg-blue-900 bg-opacity-50;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-indigo-700 bg-opacity-50 rounded-full;
+    @apply transition-all duration-300 bg-indigo-700 bg-opacity-50 rounded-full hover:bg-opacity-75;
   }
 
 }
